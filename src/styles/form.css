@@ -1,0 +1,39 @@
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Karla", sans-serif;
+}
+
+.inputs-contain {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs-contain > input {
+  font-family: "Karla", sans-serif;
+  width: 48%;
+  height: 35px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  padding: 0 8px;
+  border: 1px solid #d5d4d8;
+  border-radius: 5px;
+}
+
+.form > button {
+  font-family: "Karla", sans-serif;
+  margin-top: 15px;
+  padding: 10px 0;
+  color: white;
+  background: linear-gradient(90.41deg, #711f8d 1.14%, #a818da 100%);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: -1px;
+  border: none;
+  border-radius: 5px;
+}

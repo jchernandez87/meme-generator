@@ -1,0 +1,31 @@
+.meme-contain {
+  color: white;
+  display: flex;
+  justify-content: center;
+  font-family: "Impact", sans-serif;
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 39px;
+  letter-spacing: 0em;
+  position: relative;
+}
+
+.meme-img {
+  border-radius: 5px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.top-text {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  position: absolute;
+  top: 15px;
+}
+
+.bottom-text {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  position: absolute;
+  bottom: 15px;
+}

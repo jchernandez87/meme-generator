@@ -3,7 +3,7 @@ import myMemes from "../data/memesData";
 
 function Form() {
   let memeImage;
-  
+
   const handleClick = () => {
     const memesArr = myMemes.data.memes;
     const randomMeme = Math.floor(Math.random() * memesArr.length);
@@ -13,7 +13,7 @@ function Form() {
   return (
     <div className="form">
       <div className="inputs-contain">
-      <p>{memeImage}</p>
+        <p>{memeImage}</p>
         <input type="text" placeholder="Insert text" />
         <input type="text" placeholder="Insert text" />
       </div>

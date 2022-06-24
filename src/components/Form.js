@@ -18,7 +18,7 @@ function Form() {
         <input type="text" placeholder="Insert text" />
       </div>
       <button onClick={handleClick} type="button">
-        Get a new meme image
+      Get a new meme image
       </button>
     </div>
   );

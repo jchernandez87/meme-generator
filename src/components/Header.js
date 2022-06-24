@@ -1,6 +1,6 @@
-import "../styles/nav.css";
+import "../styles/header.css";
 
-function Nav() {
+function Header() {
   return (
     <nav className="nav">
       <div className="title-container">
@@ -12,4 +12,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default Header;

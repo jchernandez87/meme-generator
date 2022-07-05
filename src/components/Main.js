@@ -5,20 +5,29 @@ import myMemes from "../data/memesData";
 import Meme from "./Meme";
 
 function Main() {
-  const [currentImage, setImage] = useState("");
+  const [meme, setMeme] = useState({
+    topText: "",
+    bottomtext: "",
+    randomImage: "http://i.imgflip.com/1bij.jpg",
+  });
+
+  const [myImages] = useState(myMemes);
 
   const handleClick = () => {
-    const memesArr = myMemes.data.memes;
-    const randomMeme = Math.floor(Math.random() * memesArr.length);
-    const memeImage = memesArr[randomMeme].url;
+    const memesArr = myImages.data.memes;
+    const randomNum = Math.floor(Math.random() * memesArr.length);
+    const url = memesArr[randomNum].url;
 
-    setImage(memeImage);
+    setMeme((prevState) => ({
+      ...prevState,
+      randomImage: url,
+    }));
   };
 
   return (
     <div className="main">
       <Form myEvent={handleClick} />
-      <Meme image={currentImage} />
+      <Meme image={meme.randomImage} />
     </div>
   );
 }

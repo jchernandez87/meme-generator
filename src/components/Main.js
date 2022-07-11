@@ -4,24 +4,23 @@ import Form from "./Form";
 import Meme from "./Meme";
 
 function Main() {
+  const [allMemes, setAllMemes] = useState([]);
+
   const [meme, setMeme] = useState({
     topText: "",
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
-  const [allMemes, setAllMemes] = useState();
-
   useEffect(() => {
     fetch("https://api.imgflip.com/get_memes")
       .then((res) => res.json())
-      .then((data) => setAllMemes(data));
+      .then((data) => setAllMemes(data.data.memes));
   }, []);
 
   const handleClick = () => {
-    const memesArr = allMemes.data.memes;
-    const randomNum = Math.floor(Math.random() * memesArr.length);
-    const url = memesArr[randomNum].url;
+    const randomNum = Math.floor(Math.random() * allMemes.length);
+    const url = allMemes[randomNum].url;
 
     setMeme((prevState) => ({
       ...prevState,
@@ -33,7 +32,7 @@ function Main() {
     const { name, value } = event.target;
     setMeme((prevMeme) => ({
       ...prevMeme,
-      [name]: value,
+      [name]: value.toUpperCase(),
     }));
   };
 

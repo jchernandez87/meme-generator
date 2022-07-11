@@ -7,7 +7,7 @@ import Meme from "./Meme";
 function Main() {
   const [meme, setMeme] = useState({
     topText: "",
-    bottomtext: "",
+    bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg",
   });
 
@@ -24,10 +24,22 @@ function Main() {
     }));
   };
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className="main">
-      <Form myEvent={handleClick} />
-      <Meme image={meme.randomImage} />
+      <Form myEvent={handleClick} myChange={handleChange} />
+      <Meme
+        image={meme.randomImage}
+        topText={meme.topText}
+        botText={meme.bottomText}
+      />
     </div>
   );
 }
